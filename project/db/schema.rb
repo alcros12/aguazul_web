@@ -13,11 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20150823185325) do
 
-  create_table "Tipo", primary_key: "tipoID", force: :cascade do |t|
-    t.string "tipoNombre",      limit: 100, null: false
-    t.string "tipoDescripcion", limit: 100, null: false
-  end
-
   create_table "tipos", force: :cascade do |t|
     t.string   "tipo_name",  limit: 255
     t.string   "tipo_des",   limit: 255
