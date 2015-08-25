@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<img src="http://www.mediafire.com/convkey/a985/olfwspu1upcskouzg.jpg?size_id=3" alt="some_text">
+<h1>Listado de categorias de articulos</h1>
+
+<table border="1" align="center" style="width:50%">
+  <thead>
+    <tr>
+      <th><font color="#49676f">Nombre</font></th>
+      <th><font color="#49676f">Descripcion</font></th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @categories.each do |category| %>
+      <tr>
+        <td><%= category.Category_name %></td>
+        <td><%= category.Category_description %></td>
+        <td><%= link_to 'Ver', category %></td>
+        <td><%= link_to 'Editar', edit_category_path(category) %></td>
+        <td><%= link_to 'Borrar', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nueva categoria', new_category_path %>

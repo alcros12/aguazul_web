@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :trade_marks
+  resources :suppliers
+  resources :categories
   resources :tipos
 
  root 'home#index'

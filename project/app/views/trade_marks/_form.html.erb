@@ -1,0 +1,21 @@
+<%= form_for(@trade_mark) do |f| %>
+  <% if @trade_mark.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@trade_mark.errors.count, "error") %> prohibited this trade_mark from being saved:</h2>
+
+      <ul>
+      <% @trade_mark.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
