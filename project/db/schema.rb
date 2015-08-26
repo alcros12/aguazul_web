@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150825200143) do
+ActiveRecord::Schema.define(version: 20150826050050) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "Category_name",        limit: 255
@@ -19,6 +19,21 @@ ActiveRecord::Schema.define(version: 20150825200143) do
     t.datetime "created_at",                         null: false
     t.datetime "updated_at",                         null: false
   end
+
+  create_table "products", force: :cascade do |t|
+    t.string   "name",          limit: 255
+    t.text     "description",   limit: 65535
+    t.integer  "price",         limit: 4
+    t.integer  "category_id",   limit: 4
+    t.integer  "trade_mark_id", limit: 4
+    t.integer  "supplier_id",   limit: 4
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+  end
+
+  add_index "products", ["category_id"], name: "index_products_on_category_id", using: :btree
+  add_index "products", ["supplier_id"], name: "index_products_on_supplier_id", using: :btree
+  add_index "products", ["trade_mark_id"], name: "index_products_on_trade_mark_id", using: :btree
 
   create_table "suppliers", force: :cascade do |t|
     t.string   "name",         limit: 255
@@ -42,4 +57,7 @@ ActiveRecord::Schema.define(version: 20150825200143) do
     t.datetime "updated_at",             null: false
   end
 
+  add_foreign_key "products", "categories"
+  add_foreign_key "products", "suppliers"
+  add_foreign_key "products", "trade_marks"
 end
