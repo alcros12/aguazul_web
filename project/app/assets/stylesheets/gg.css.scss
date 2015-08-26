@@ -46,7 +46,10 @@ template {
 a {
   background-color: transparent;
 }
-
+a:hover
+{
+    
+}
 a:active,
 a:hover {
   outline: 0;
@@ -267,9 +270,11 @@ th {
 }
 @font-face {
   font-family: 'Glyphicons Halflings';
-
-  src: url('../fonts/glyphicons-halflings-regular.eot');
-  src: url('../fonts/glyphicons-halflings-regulard41d.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff2') format('woff2'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+  src: url('../assets/glyphicons-halflings-regular.eot');
+  src: url('../assets/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'),
+  url('../assets/glyphicons-halflings-regular.woff') format('woff'),
+  url('../assets/glyphicons-halflings-regular.ttf') format('truetype'),
+  url('../assets/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
 .glyphicon {
   position: relative;
@@ -4746,7 +4751,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 .label {
   display: inline;
   padding: .2em .6em .3em;
-  font-size: 75%;
+  font-size: 120%;
   font-weight: bold;
   line-height: 1;
   color: #fff;
