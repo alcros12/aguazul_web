@@ -53,3 +53,14 @@ group :development, :test do
   gem 'spring'
 end
 
+gem 'simple_form'
+
+
+# Bootstrap Framework Support
+gem 'therubyracer'
+gem 'less-rails'
+gem 'twitter-bootstrap-rails'
+
+
+#Attachment Support
+gem 'paperclip', '~> 4.2'

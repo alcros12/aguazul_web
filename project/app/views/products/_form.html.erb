@@ -1,41 +1,23 @@
-<%= form_for(@product) do |f| %>
-  <% if @product.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
+<%= simple_form_for @product, :html => { class: 'form-inline', multipart: true } do |f| %>
 
-      <ul>
-      <% @product.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
-  </div>
-  <div class="field">
-    <%= f.label :price %><br>
-    <%= f.number_field :price %>
-  </div>
-  <div class="field">
-    <%= f.label :category_id %><br>
-    <%= f.text_field :category_id %>
-  </div>
-  <div class="field">
-    <%= f.label :trade_mark_id %><br>
-    <%= f.text_field :trade_mark_id %>
-  </div>
-  <div class="field">
-    <%= f.label :supplier_id %><br>
-    <%= f.text_field :supplier_id %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <%= f.input :name %>
+  <%= error_span(@product[:name]) %>
+  <%= f.input :description %>
+  <%= error_span(@product[:description]) %>
+  <%= f.association :category %>
+  <%= error_span(@product[:category]) %>
+      <%= f.association :supplier %>
+  <%= error_span(@product[:supplier]) %>
+    <%= f.association :trade_mark %>
+  <%= error_span(@product[:trade_mark]) %>
+    <%= f.input :picture, as: :file %>
+  <%= image_tag @product.picture.url(:medium) unless @product.picture_file_name.nil? %>
+  <%= error_span(@product[:picture]) %>
+
+
+
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                products_path, :class => 'btn btn-default' %>
 <% end %>
