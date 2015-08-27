@@ -5,13 +5,13 @@
   <%= error_span(@product[:name]) %>
   <%= f.input :description %>
   <%= error_span(@product[:description]) %>
+  <%= f.association :trade_mark %>
+  <%= error_span(@product[:trade_mark]) %>
+  <%= f.association :supplier %>
+  <%= error_span(@product[:supplier]) %>
   <%= f.association :category %>
   <%= error_span(@product[:category]) %>
-      <%= f.association :supplier %>
-  <%= error_span(@product[:supplier]) %>
-    <%= f.association :trade_mark %>
-  <%= error_span(@product[:trade_mark]) %>
-    <%= f.input :picture, as: :file %>
+  <%= f.input :picture, as: :file %>
   <%= image_tag @product.picture.url(:medium) unless @product.picture_file_name.nil? %>
   <%= error_span(@product[:picture]) %>
 
