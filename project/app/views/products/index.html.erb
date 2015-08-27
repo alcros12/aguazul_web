@@ -8,7 +8,7 @@
       <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:name) %></th>
       <th><%= model_class.human_attribute_name(:description) %></th>
-
+   <th><%= model_class.human_attribute_name(:category) %></th>
        <th><%= model_class.human_attribute_name(:picture) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
@@ -20,7 +20,7 @@
         <td><%= link_to product.id, product_path(product) %></td>
         <td><%= product.name %></td>
         <td><%= product.description %></td>
-  
+   <td><%= product.category.name %></td>
            <td><%= image_tag product.picture.url(:thumb)  %></td>
         <td><%=l product.created_at %></td>
         <td>
