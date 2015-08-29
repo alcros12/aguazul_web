@@ -5,9 +5,6 @@
 
 	<header>
 
-		<!-- Facebook div for like button -->
-		<div id="fb-root"></div>
-
 		<!-- Div for shade line -->
 
 		<div class="row hidden-print">
@@ -43,7 +40,7 @@
 				<nav class="navbar navbar-right header-nav" role="navigation">
 					<ul class="nav navbar-nav">
 						<li class="dropdown">
-							<a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="label label-danger">Mi cuenta</span></a>
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="label label-primary">Iniciar Sesión</span></a>
 							<ul class="dropdown-menu">
 								<li>
 									<div class="dropdown-content">
@@ -83,15 +80,14 @@
 					<div class="col-xs-12">
 						<div class="navbar header-search-nav">
 							<ul class="nav navbar-nav">
-								<li><%= image_tag("gemas_banner.png", :alt => "Logo",:class =>"img-responsive") %></li>
+								<li><%= image_tag("ofertasbanner.png", :alt => "Logo",:class =>"img-responsive") %></li>
 							
 							</ul>
 						</div>
 					</div>
 					<!-- END CONTENT ITEM -->
-
 				</div>
-
+				<br></br>
 				<div class="row hidden-print">
 					<div class="col-xs-12">
 
@@ -112,12 +108,12 @@
 
 				<!-- START CONTENT ITEM 
 				<img src="img/banner_top-v3.jpg" alt="No shipping" class="img-responsive">-->
-				<%= image_tag("banner_top-v3.png", :alt => "Logo",:class =>"img-responsive") %>
+				<%= image_tag("bannerdelivery.png", :alt => "Logo",:class =>"img-responsive") %>
 				<!-- END CONTENT ITEM -->
 
 			</div>
 		</div>
-
+        
 		<div class="row hidden-print">
 			<div class="col-xs-12">
 
@@ -166,7 +162,7 @@
 		<div class="row">
 			<div class="col-xs-12">
 				<!-- START CONTENT ITEM -->
-				<div class="alert alert-warning"><button type="button" class="close" data-dismiss="alert">&times;</button>Qué espera para comprar!, haga su compra y reciba su pedido en la puerta de su hogar. Express delivery!<strong> (+5 nuevos soles sobre el precio pedido) </strong></div>
+				<div class="alert alert-info"><button type="button" class="close" data-dismiss="alert">&times;</button>Express delivery!<strong> (+2 gemas sobre el precio pedido) </strong></div>
 				<!-- END CONTENT ITEM -->
 
 			</div>
@@ -174,56 +170,80 @@
 
 		<div class="row">
 			<div class="col-xs-12">
-				<div class="slider-wrapper theme-bar">
+				<div class="slider-wrapper theme-light">
 					<div class="ribbon"></div>
 					<div id="slider1" class="nivoslider">
 						<a href="#">
 							<!--<img src="img/header_01.jpg" alt="" title="This is an example of a caption<br>This is the second caption line">-->
-							<%= image_tag("header_01.jpg", :alt => "",:class =>"img-responsive",:title =>"This is an example of a caption<br>This is the second caption line") %>
+							<%= image_tag("bannerfrutas.png", :alt => "",:class =>"img-responsive") %>
+						</a>
+					    <a href="#">
+							<!--<img src="img/header_02.jpg" alt="" title="">-->
+							<%= image_tag("bannerchocolates.png", :alt => "",:class =>"img-responsive") %>
 						</a>
 						<a href="#">
 							<!--<img src="img/header_02.jpg" alt="" title="">-->
-							<%= image_tag("header_02.jpg", :alt => "",:class =>"img-responsive",:title =>"") %>
+							<%= image_tag("bannerlacteos.png", :alt => "",:class =>"img-responsive") %>
+					
 						</a>
-						<!--<img src="img/header_03.jpg" alt="" title="Another caption example">-->
-						<%= image_tag("header_03.jpg", :alt => "",:class =>"img-responsive",:title =>"Another caption example") %>
+						<a href="#">
+							<!--<img src="img/header_02.jpg" alt="" title="">-->
+							<%= image_tag("bannerdulces.png", :alt => "",:class =>"img-responsive") %>
+						</a>
+						<a href="#">
+							<!--<img src="img/header_02.jpg" alt="" title="">-->
+							<%= image_tag("bannerdulces.png", :alt => "",:class =>"img-responsive") %>
+						</a>
+						<a href="#">
+							<!--<img src="img/header_02.jpg" alt="" title="">-->
+							<%= image_tag("bannercarnes.png", :alt => "",:class =>"img-responsive") %>
+						</a>
 					</div>
 				</div>
+				
 			</div>
 		</div>
-
+	
 	</header>
     <br></br><br></br>
 	<div class="row">
 
 		<div class="col-xs-12">
+			<div class="well well-lg">
 			<!-- START CONTENT ITEM -->
 			<div class="row">
+				
 				<div class="col-xs-12 col-sm-12 col-md-6 col-md-6">
 					<div class="article">
 						<article>
 							<!--<img src="img/nominate.png" align="right">-->
 							<!--< image_tag("nominate.png",:align=> "right") %>-->
-						<img class="img-responsive" src="http://www.mediafire.com/convkey/f7be/j9o7q2a6a5gf34czg.jpg?size_id=4" align="right">
-							<h4>¡Compra con gemas!</h4>
-							<h5>Tu nueva moneda</h5>
-							<p>Para adquirir nuestros productos en venta debes usar gemas, ¡es divertido! <!--<a href="column3.html">More <span class="glyphicon glyphicon-chevron-right"></span></a>--></p>
+						<%= image_tag("compragemas.png",:align=> "right") %>
+							<h4>
+								<span class="label label-danger">¡Compra con gemas!</span>
+							</h4>
+
+							<p>En opalo nuestros clientes tienen la facilidad de adquirir nuestros productos en venta através de nuestro sistema de gemas, ¡es divertido!  <!--<a href="column3.html">More <span class="glyphicon glyphicon-chevron-right"></span></a>--></p>
 						</article>
 					</div>
 				</div>
+				
 				<div class="col-xs-12 col-sm-12 col-md-6 col-md-6">
 					<div class="article">
 						<article>
 							<!--<img src="img/starway.png" align="right">-->
-							<!--<%= image_tag("starway.png",:align=> "right") %>-->
-								<img class="img-responsive" src="http://www.mediafire.com/convkey/ffa6/bkj0m9vy0lb6noozg.jpg" align="right">
-							<h4>¿Como adquirir gemas?</h4>
-							<h5>¡$$$$!</h5>
+							<%= image_tag("pagogemas.png",:align=> "right") %>
+								
+							<h4>
+								<span class="label label-danger">¿Como adquirir gemas?</span>
+							</h4>
+
 							<p>Registrate con tu tarjeta de debito, credito o cuenta de Paypal, nosotros nos encargamos del resto (cobrarte). <!-- <a href="column3.html">More <span class="glyphicon glyphicon-chevron-right"></span></a>--></p>
 						</article>
 					</div>
 				</div>
 				
+			</div>
 			</div>
 			<!-- END CONTENT ITEM -->
 
@@ -241,55 +261,53 @@
 				<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
 					<div class="thumbnail light">
 						<a href="detail.html">
-							<span class="label label-info price">&euro; 2,<sup>99</sup></span>
-							<span class="label label-danger price price-over">&euro; 1,<sup>99</sup></span>
+							<span class="label label-info price price-over">S/. 1,<sup>99</sup></span>
 							<!--<img data-hover="img/product_04b.jpg" src="img/product_04.jpg" alt="">-->
 							<%= image_tag("product_04.jpg") %>
 						</a>
 						<div class="caption">
 							<a href="detail.html">Product A</a>
 						</div>
-						<a href="products.html" class="btn btn-default btn-block">all products in category</a>
+						<a href="products.html" class="btn btn-info btn-block">all products in category</a>
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
 					<div class="thumbnail dark">
 						<a href="detail.html">
-							<div class="label label-info price">&euro; 93,<sup>99</sup></div>
+							<div class="label label-info price">S/. 93,<sup>99</sup></div>
 							<!--<img data-hover="img/product_05b.jpg" src="img/product_05.jpg" alt="">-->
 							<%= image_tag("product_05.jpg") %>
 						</a>
 						<div class="caption">
 							<a href="detail.html">Product B</a>
 						</div>
-						<a href="products.html" class="btn btn-default btn-block">all products in category</a>
+						<a href="products.html" class="btn btn-info btn-block">all products in category</a>
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
 					<div class="thumbnail light">
 						<a href="detail.html">
-							<div class="label label-info price">&euro; 123,<sup>99</sup></div>
+							<div class="label label-info price">S/. 123,<sup>99</sup></div>
 							<!--<img data-hover="img/product_06b.jpg" src="img/product_06.jpg" alt="">-->
 							<%= image_tag("product_06.jpg") %>
 						</a>
 						<div class="caption">
 							<a href="detail.html">Product C</a>
 						</div>
-						<a href="products.html" class="btn btn-default btn-block">all products in category</a>
+						<a href="products.html" class="btn btn-info btn-block">all products in category</a>
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
 					<div class="thumbnail dark">
 						<a href="detail.html">
-							<div class="label label-info price">&euro; 123,<sup>99</sup></div>
-							<span class="label label-danger price price-over">&euro; 122,<sup>99</sup></span>
+							<span class="label label-info price price-over">S/. 122,<sup>99</sup></span>
 							<!--<img data-hover="img/product_07b.jpg" src="img/product_07.jpg" alt="">-->
 							<%= image_tag("product_07.jpg") %>
 						</a>
 						<div class="caption">
 							<a href="detail.html">Product D</a>
 						</div>
-						<a href="products.html" class="btn btn-default btn-block">all products in category</a>
+						<a href="products.html" class="btn btn-info btn-block">all products in category</a>
 					</div>
 				</div>
 			</div>
@@ -306,50 +324,49 @@
 				<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
 					<div class="thumbnail dark">
 						<a href="detail.html">
-							<span class="label label-info price">&euro; 2,<sup>99</sup></span>
+							<span class="label label-info price">S/. 2,<sup>99</sup></span>
 							<%= image_tag("product_08.jpg") %>
 						</a>
 						<div class="caption">
 							<a href="detail.html">Product A</a>
 						</div>
-						<a href="products.html" class="btn btn-default btn-block">all products in category</a>
+						<a href="products.html" class="btn btn-info btn-block">all products in category</a>
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
 					<div class="thumbnail light">
 						<a href="detail.html">
-							<div class="label label-info price">&euro; 93,<sup>99</sup></div>
+							<div class="label label-info price">S/. 93,<sup>99</sup></div>
 							<%= image_tag("product_09.jpg") %>
 						</a>
 						<div class="caption">
 							<a href="detail.html">Product B</a>
 						</div>
-						<a href="products.html" class="btn btn-default btn-block">all products in category</a>
+						<a href="products.html" class="btn btn-info btn-block">all products in category</a>
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
 					<div class="thumbnail dark">
 						<a href="detail.html">
-							<div class="label label-info price">&euro; 123,<sup>99</sup></div>
-							<span class="label label-danger price price-over">&euro; 999,<sup>99</sup></span>
+							<span class="label label-info price price-over">S/. 999,<sup>99</sup></span>
 							<%= image_tag("product_10.jpg") %>
 						</a>
 						<div class="caption">
 							<a href="detail.html">Product C</a>
 						</div>
-						<a href="products.html" class="btn btn-default btn-block">all products in category</a>
+						<a href="products.html" class="btn btn-info btn-block">all products in category</a>
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
 					<div class="thumbnail light">
 						<a href="detail.html">
-							<div class="label label-info price">&euro; 123,<sup>99</sup></div>
+							<div class="label label-info price">S/. 123,<sup>99</sup></div>
 							<%= image_tag("product_11.jpg") %>
 						</a>
 						<div class="caption">
 							<a href="detail.html">Product D</a>
 						</div>
-						<a href="products.html" class="btn btn-default btn-block">all products in category</a>
+						<a href="products.html" class="btn btn-info btn-block">all products in category</a>
 					</div>
 				</div>
 			</div>
@@ -366,68 +383,53 @@
 				<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
 					<div class="thumbnail light">
 						<a href="detail.html">
-							<span class="label label-info price">&euro; 2,<sup>99</sup></span>
+							<span class="label label-info price">S/. 2,<sup>99</sup></span>
 							<%= image_tag("product_12.jpg") %>
 						</a>
 						<div class="caption">
 							<a href="detail.html">Product A</a>
 						</div>
-						<a href="products.html" class="btn btn-default btn-block">all products in category</a>
+						<a href="products.html" class="btn btn-info btn-block">all products in category</a>
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
 					<div class="thumbnail dark">
 						<a href="detail.html">
-							<div class="label label-info price">&euro; 93,<sup>99</sup></div>
-							<span class="label label-danger price price-over">&euro; 89,<sup>99</sup></span>
+							<span class="label label-info price price-over">S/. 89,<sup>99</sup></span>
 							<%= image_tag("product_13.jpg") %>
 						</a>
 						<div class="caption">
 							<a href="detail.html">Product B</a>
 						</div>
-						<a href="products.html" class="btn btn-default btn-block">all products in category</a>
+						<a href="products.html" class="btn btn-info btn-block">all products in category</a>
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
 					<div class="thumbnail light">
 						<a href="detail.html">
-							<div class="label label-info price">&euro; 123,<sup>99</sup></div>
+							<div class="label label-info price">S/. 123,<sup>99</sup></div>
 							<%= image_tag("product_14.jpg") %>
 						</a>
 						<div class="caption">
 							<a href="detail.html">Product C</a>
 						</div>
-						<a href="products.html" class="btn btn-default btn-block">all products in category</a>
+						<a href="products.html" class="btn btn-info btn-block">all products in category</a>
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
 					<div class="thumbnail dark">
 						<a href="detail.html">
-							<div class="label label-info price">&euro; 123,<sup>99</sup></div>
+							<div class="label label-info price">S/. 123,<sup>99</sup></div>
 							<%= image_tag("product_15.jpg") %>
 						</a>
 						<div class="caption">
 							<a href="detail.html">Product D</a>
 						</div>
-						<a href="products.html" class="btn btn-default btn-block">all products in category</a>
+						<a href="products.html" class="btn btn-info btn-block">all products in category</a>
 					</div>
 				</div>
 			</div>
 			<!-- END CONTENT ITEM -->
-
 		</div>
-	</div>
-
-	<div class="row">
-		<div class="col-xs-12">
-			<div class="well">
-				
-				<!-- START CONTENT ITEM -->
-				&copy; <script>document.write(new Date().getFullYear());</script> - Aplicaciones Para Dispositivos Móviles
-				<!-- END CONTENT ITEM -->
-
-			</div>
-		</div>
-	</div>
 
 </div>
