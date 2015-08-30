@@ -1,0 +1,78 @@
+ul.social_btrix {
+list-style:none;
+display:inline-block;
+margin:15px auto;
+}
+ul.social_btrix li {
+display:inline;
+float:left;
+background-repeat:no-repeat;
+}
+ul.social_btrix li a {
+display:block;
+width:50px;
+height:50px;
+padding-right:10px;
+position:relative;
+text-decoration:none;
+}
+ul.social_btrix li a strong {
+font-weight:400;
+position:absolute;
+left:20px;
+top:-1px;
+color:#fff;
+z-index:9999;
+text-shadow:1px 1px 0 rgba(0,0,0,0.75);
+background-color:rgba(0,0,0,0.7);
+-moz-border-radius:3px;
+-moz-box-shadow:0 0 5px rgba(0,0,0,0.5);
+-webkit-border-radius:3px;
+-webkit-box-shadow:0 0 5px rgba(0,0,0,0.5);
+border-radius:3px;
+box-shadow:0 0 5px rgba(0,0,0,0.5);
+padding:3px;
+}
+ul.social_btrix li.abfacebook {
+background-image:url(http://4.bp.blogspot.com/-nJMUyZUi2SM/UaXEnGYtwWI/AAAAAAAAAkM/SXrQ4Q8ASoA/s1600/btrix-facebook-icon.png);
+}
+ul.social_btrix li.abtwitter {
+background-image:url(http://4.bp.blogspot.com/-_18_qzg7sHs/UaXEnVKS3aI/AAAAAAAAAkY/UYLCvEQuOEI/s1600/btrix-twitter-icon.png);
+}
+ul.social_btrix li.abgoogleplus {
+background-image:url(http://2.bp.blogspot.com/-DpI_6iUH6GY/UaXEnB83lFI/AAAAAAAAAkQ/Q6QtGamgL_E/s1600/btrix-google-icon.png);
+}
+ul li.abpinterest {
+background-image: url(http://2.bp.blogspot.com/-tMeDXWRp5VY/UaXEmVQIGDI/AAAAAAAAAj0/FrLLKtGE8j0/s1600/btrix-Pinterest-icon.png);
+}
+ul.social_btrix li.abstumbleupon {
+background-image:url(http://1.bp.blogspot.com/-NxzIC4d0ixE/UaXEmytFBoI/AAAAAAAAAkI/jmk72VMrnvA/s1600/btrix-StumbleUpon-icon.png);
+}
+ul.social_btrix li.abdig {background-image:url(http://4.bp.blogspot.com/-J2vYlohj8qw/UaXEmX-JDMI/AAAAAAAAAj8/QwSrbs1Md8w/s1600/btrix-Digg-icon.png);
+}
+ul.social_btrix li.ablinkedin {
+background-image:url(http://2.bp.blogspot.com/-HaUpL3wjx3I/UaXEmf3UVSI/AAAAAAAAAj4/cHVj0FALvgk/s1600/btrix-Linkedin-icon.png);
+}
+#animation_btrix:hover li {
+opacity:0.2;
+}
+#animation_btrix li {
+-webkit-transition-property:opacity;
+-webkit-transition-duration:500ms;
+-moz-transition-property:opacity;
+-moz-transition-duration:500ms;
+}
+#animation_btrix li a strong {
+opacity:0;
+-webkit-transition-property:opacity, top;
+-webkit-transition-duration:300ms;
+-moz-transition-property:opacity, top;
+-moz-transition-duration:300ms;
+}
+#animation_btrix li:hover {
+opacity:1;
+}
+#animation_btrix li:hover a strong {
+opacity:1;
+top:-10px;
+}
