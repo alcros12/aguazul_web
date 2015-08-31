@@ -1,5 +1,6 @@
 <div class="container">
 	<header>
+		<script type="text/javascript" src="jquery-1.7.1.min.js"></script>
 		<!-- Div for shade line <div class="header-shadow"></div>-->
 		<div class="row-fluid">
 			<div class="span12">
@@ -31,15 +32,22 @@
 							</a>
 							<ul class="dropdown-menu">
 								<li>
+									<% if session[:email] == nil %>
 									<div class="dropdown-content">
 										<br>
-										<form role="form">
-											<input type="text" class="form-control" placeholder="Usuario"><br>
-											<input type="password" class="form-control" placeholder="Clave"><br>
-											<button type="submit" class="btn btn-primary">Entrar</button>
+										<form id='frmLogin' action='/login' role="form" method='post'>
+											<input required id='txtEmail' name="email" type="text" class="form-control" placeholder="Usuario"><br>
+											<div id='smsAlert'></div>
+											<input required id='txtPassword' name="password" type="password" class="form-control" placeholder="Clave"><br>
+											<div id='smsAlert'></div>
+											<button id='btnLogin' type="submit" class="btn btn-primary">Entrar</button>
 										</form> 
 										<br>
 									</div>
+									<% else %>
+										<span>hola</span>
+										<a href='/logout'><strong>Salir</strong></a>
+									<% end %>
 								</li>
 							</ul>
 						</li>
@@ -316,3 +324,4 @@
 		</div>
 
 </div>
+

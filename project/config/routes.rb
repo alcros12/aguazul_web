@@ -1,10 +1,17 @@
 Rails.application.routes.draw do
+  get 'users/new'
+
+  get '/profile', to: 'home#index'
+  get '/logout', to: 'home#logout'
+  post '/login', to: 'home#login'
+  get '/index', to: 'home#index'
+
   resources :products
   resources :trade_marks
   resources :suppliers
   resources :categories
   resources :tipos
-
+  resources :users
  root 'home#index'
 
 
