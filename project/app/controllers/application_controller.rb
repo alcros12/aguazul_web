@@ -22,18 +22,25 @@ class ApplicationController < ActionController::Base
   end
   
   def login
-    @name = User.name
-    @email = params[:email]
-    @password = params[:password]
-    if @email && @password
-      session[:signed_in] = true
-      session[:email] = params[:email]
-      logger.info" The user id is not null"
-      redirect_to '/profile'
+    @user = User.find_by_email(params[:email])
+    if @user.nil?
+      redirect_to '/index'
     else
-      logger.info" The user id is null"
+      session[:user] = @user.name
+      @email = params[:email]
+      @password = params[:password]
+      if @email && @password
+        session[:signed_in] = true
+        session[:email] = params[:email]
+        session[:name] = @user.name
+        logger.info" The user id is not null"
+        logger.info session[:name] = @user.name
+        redirect_to '/profile'
+      else
+        logger.info" The user id is null"
+      end
     end
   end
-  
+
 end
 
