@@ -26,18 +26,20 @@ class ApplicationController < ActionController::Base
     if @user.nil?
       redirect_to '/index'
     else
-      session[:user] = @user.name
       @email = params[:email]
       @password = params[:password]
       if @email && @password
         session[:signed_in] = true
         session[:email] = params[:email]
+        session[:password] = params[:password]
         session[:name] = @user.name
+        session[:password] = @user.encrypted_password
         logger.info" The user id is not null"
+        logger.info session[:password] = @user.encrypted_password
         logger.info session[:name] = @user.name
         redirect_to '/profile'
       else
-        logger.info" The user id is null"
+        redirect_to '/index'
       end
     end
   end
