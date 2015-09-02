@@ -33,9 +33,7 @@ class ApplicationController < ActionController::Base
         session[:email] = params[:email]
         session[:password] = params[:password]
         session[:name] = @user.name
-        session[:password] = @user.encrypted_password
         logger.info" The user id is not null"
-        logger.info session[:password] = @user.encrypted_password
         logger.info session[:name] = @user.name
         redirect_to '/profile'
       else
