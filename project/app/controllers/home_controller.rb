@@ -4,5 +4,6 @@ class HomeController < ApplicationController
   
   def catalogo
     @products = Product.all
+    @categories = Category.all
   end
 end

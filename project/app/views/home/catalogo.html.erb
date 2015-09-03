@@ -1,24 +1,49 @@
 <%- model_class = Product -%>
+
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+  <h1 align="center"><font color="white">Cat&aacutelogo</font></h1>
 </div>
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th><%= model_class.human_attribute_name(:name) %></th>
-      <th><%= model_class.human_attribute_name(:description) %></th>
-      <th><%= model_class.human_attribute_name(:category) %></th>
-      <th><%= model_class.human_attribute_name(:picture) %></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @products.each do |product| %>
-      <tr>
-        <td><%= product.name %></td>
-        <td><%= product.description %></td>
-        <td><%= product.category.name %></td>
-        <td><%= image_tag product.picture.url(:thumb)  %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+
+<div class="row" align="center">
+  <form name="search_cat_bar" method="get" action="/index">
+   <table width="700" cellpadding="5">
+     <tr>
+       <td>
+         <input type="hidden" name="dff_view" value="grid">
+         <font color="white">Buscar Producto:&nbsp;</font>
+         <input type="text" name="dff_keyword" size="30" maxlength="50"> o 
+         
+         <select name="dff_cat1num" size="1">
+           <option selected="selected" class="s">Filtrar por Categor&iacutea</option>
+          <% @categories.each do |category| %>
+            <option> <%=category.name.upcase%> </option>
+          <% end %>
+         </select>&nbsp;
+         <input type="submit" value="Buscar">
+       </td>
+     </tr>
+   </table>
+</form>
+</div>
+
+<br>
+
+<div class="row">
+  <% @products.each do |product| %>
+    <div class="product-list-inline-large">
+      <div class="col-xs-6 col-md-3">
+        <div class="thumbnail light">
+          <a>
+            <span class="label label-default price price-over"><%= image_tag("gema.png")%>&nbsp;<%=product.price%></span>
+            <%= image_tag product.picture.url(:medium)  %>
+          </a>
+          <div class="caption">
+            <h3><%= product.name %></h3>
+            <p><strong>Categoría: <%= product.category.name.upcase  %></strong></p>
+            <p><%= product.description %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

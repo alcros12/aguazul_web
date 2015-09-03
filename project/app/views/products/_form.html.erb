@@ -3,6 +3,8 @@
 
   <%= f.input :name %>
   <%= error_span(@product[:name]) %>
+  <%= f.input :price %>
+  <%= error_span(@product[:price]) %>
   <%= f.input :description %>
   <%= error_span(@product[:description]) %>
   <%= f.association :trade_mark %>
