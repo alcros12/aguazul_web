@@ -1,28 +1,149 @@
 <%- model_class = Product -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
-</div>
-<table class="table table-striped">
+<div class="container">
+	<header>
+		<script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+		<!-- Div for shade line <div class="header-shadow"></div>-->
+		<div class="row-fluid">
+			<div class="span12">
+				<b:if cond='data:blog.pageType == &quot;item&quot;'>
+				    <ul class='social_btrix' id='animation_btrix'>
+					    <li class='abfacebook'>
+					    	<a href="https://www.facebook.com/pages/LittleTemplate/1094612707231437"><strong>Facebook</strong></a>
+					    </li>
+					    <li class='abtwitter'>
+					    	<a href="#"><strong>Twitter</strong></a>
+					    </li>
+					    <li class='abgoogleplus'>
+							<a href="#"><strong>Google+</strong></a>
+					    </li>
+					    <li class='abpinterest'>
+							<a href="#"><strong>Pinterest</strong></a>
+					    </li>
+					    <li class='ablinkedin'>
+					    	<a href="#"><strong>LinkedIn</strong></a>
+					    </li>
+				    </ul>
+				</b:if>
+			
+				<nav class="navbar navbar-right header-nav" role="navigation">
+					<ul class="nav navbar-nav">
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+								<button type="button" class="btn btn-default"><span class="glyphicon glyphicon-user"></span>&nbsp;Iniciar Sesión</button>
+							</a>
+							<ul class="dropdown-menu">
+								<li>
+									<% if session[:email] == nil %>
+									<div class="dropdown-content">
+										<br>
+										<form id='frmLogin' action='/login' role="form" method='post'>
+											<input required id='txtEmail' name="email" type="text" class="form-control" placeholder="Usuario"><br>
+											<div id='smsAlert'></div>
+											<input required id='txtPassword' name="password" type="password" class="form-control" placeholder="Clave"><br>
+											<div id='smsAlert'></div>
+											<button id='btnLogin' type="submit" class="btn btn-primary">Entrar</button>
+											<button id='btnSignIn' type="submit" class="btn btn-danger">Registro</button>
+										</form> 
+										<br>
+									</div>
+									<% else %>
+										<span><%=session[:name]%></span></span>
+										<a href='/logout'><strong>Salir</strong></a>
+									<% end %>
+								</li>
+							</ul>
+						</li>
+
+					</ul>
+				</nav>
+			</div>
+		</div>
+		
+		<div class="row hidden-print">
+			<div class="col-xs-12">
+				<!-- START CONTENT ITEM -->
+				<nav class="navbar navbar-default main-nav" role="navigation">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+							<span class="sr-only">menu</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+					</div>
+					<div class="collapse navbar-collapse">
+						<ul class="nav navbar-nav navbar-left">
+							<li><a href="#"><span class="glyphicon glyphicon-home"></span></a></li>
+							<li><a href="categories">CATEGORIAS</a></li>
+							<li><a href="products">PRODUCTOS</a></li>
+							<li><a href="trade_marks">MARCAS</a></li>
+							<li><a href="suppliers">PROVEEDORES</a></li>
+							<li><a href="order">CONTACTANOS</a></li>
+							<li class="dropdown">
+								<a class="dropdown-toggle" data-toggle="dropdown" href="#">OTRAS PAGINAS <b class="caret"></b></a>
+								<ul class="dropdown-menu">
+									<li><a href="column1.html">1 column page</a></li>
+									<li><a href="column2.html">2 column page</a></li>
+									<li><a href="column3.html">3 column page</a></li>
+								</ul>
+							</li>
+						</ul>
+				
+					</div>
+				</nav>
+				<!-- END CONTENT ITEM -->
+
+			</div>
+		</div>
+		
+		<div class="row header-top hidden-print">
+			<div class="col-md-12">
+				 <%= image_tag("logo.png", :alt => "",:class =>"img-responsive") %>
+			</div>
+		</div>
+
+
+		
+	</header>
+  </div>
+
+
+<p id="notice"><%= notice %></p>
+
+
+
+
+<br>
+
+<div class="container">
+<h1 align="center"><font color="white">Listado de categorias de articulos</font></h1>
+       
+  <table class="table">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:name) %></th>
-      <th><%= model_class.human_attribute_name(:description) %></th>
-   <th><%= model_class.human_attribute_name(:category) %></th>
-       <th><%= model_class.human_attribute_name(:picture) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
-      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+      <th><font color="white"><%= model_class.human_attribute_name(:name) %></font></th>
+      <th><font color="white"><%= model_class.human_attribute_name(:description) %></font></th>
+      <th><font color="white"><%= model_class.human_attribute_name(:category) %></font></th>
+      <th><font color="white"><%= model_class.human_attribute_name(:picture) %></font></th>
+      <th><font color="white"><%= model_class.human_attribute_name(:created_at) %></font></th>
+      <th><font color="white"><%=t '.actions', :default => t("helpers.actions") %></font></th>
     </tr>
   </thead>
+  
+  
+  
+
+  
+  
+  
   <tbody>
     <% @products.each do |product| %>
       <tr>
-        <td><%= link_to product.id, product_path(product) %></td>
-        <td><%= product.name %></td>
-        <td><%= product.description %></td>
-   <td><%= product.category.name %></td>
-           <td><%= image_tag product.picture.url(:thumb)  %></td>
-        <td><%=l product.created_at %></td>
+        <td><font color="white"><%= product.name %></font></td>
+        <td><font color="white"><%= product.description %></font></td>
+        <td><font color="white"><%= product.category.name %></font></td>
+        <td><font color="white"><%= image_tag product.picture.url(:thumb)  %></font></td>
+        <td><font color="white"><%=l product.created_at %></font></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_product_path(product), :class => 'btn btn-default btn-xs' %>
@@ -36,6 +157,7 @@
     <% end %>
   </tbody>
 </table>
+</div>
 
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_product_path,
