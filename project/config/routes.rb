@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   get '/logout', to: 'home#logout'
   post '/login', to: 'home#login'
   get '/index', to: 'home#index'
-
+  get '/catalogo', to: 'home#catalogo'
+  
   resources :products
   resources :trade_marks
   resources :suppliers
