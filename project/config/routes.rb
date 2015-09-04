@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   post '/login', to: 'home#login'
   get '/index', to: 'home#index'
   get '/catalogo', to: 'home#catalogo'
+  post '/search_product', to: 'home#search_product'
   
   resources :products
   resources :trade_marks
