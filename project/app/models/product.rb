@@ -5,7 +5,7 @@ class Product < ActiveRecord::Base
   
   
   #picture as attribute
-has_attached_file :picture,
+  has_attached_file :picture,
     :styles => { :medium =>"300x300>", :thumb=>"100x100>"},
     :default_url => "/images/:style/missing.png"
 
@@ -15,7 +15,10 @@ has_attached_file :picture,
     presence: true,
     content_type: { content_type: ["image/jpeg","image/gif","image/png"]}
    
-
+  def self.search(search)
+  where("name LIKE ?", "%#{search}%")
+  end
+  
 end
 
 

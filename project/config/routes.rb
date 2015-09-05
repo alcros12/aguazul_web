@@ -5,10 +5,14 @@ Rails.application.routes.draw do
   get '/logout', to: 'home#logout'
   post '/login', to: 'home#login'
   get '/index', to: 'home#index'
-  get '/catalogo', to: 'home#catalogo'
-  post '/search_product', to: 'home#search_product'
+  get 'catalog', to: 'products#catalog'
   
-  resources :products
+  resources :products do
+    collection do
+     get 'catalog'
+     post 'search'
+   end
+  end
   resources :trade_marks
   resources :suppliers
   resources :categories

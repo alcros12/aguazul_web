@@ -1,3 +1,8 @@
+<%= form_tag(catalog_path, :method => "get", id: "search-form") do %>
+<%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
+<%= submit_tag "Search" %>
+<% end %>
+
 <div class="page-header">
   <h1 align="center"><font color="white">Cat&aacutelogo</font></h1>
 </div>
@@ -6,7 +11,7 @@
 	<div class="row">
 		<div class="col-md-12">
 		  
-		  	<form id='frmSearchProduct' action='/search_product' role="form" method='post'>
+		  	<form id='frmSearchProduct' action='/products/search' role="form" method='post'>
             <div class="input-group" id="adv-search">
                 <input type="text" class="form-control" name="searchBar"  placeholder="Buscar Producto.." />
                 <div class="input-group-btn">
@@ -33,7 +38,6 @@
                         <button type="submit" class="btn btn-primary">
                           <span class="glyphicon glyphicon-search" aria-hidden="true"></span>&nbsp;Buscar
                         </button>
-                        
                     </div>
                 </div>
             </div>

@@ -16,7 +16,28 @@ class ProductsController < ApplicationController
   def new
     @product = Product.new
   end
-
+  
+   # GET /products/catalog
+  def catalog
+    @categories = Category.all
+    @products = Product.all
+    if params[:search]
+      @products = Product.search(params[:search])
+    end
+  end
+  
+  def search
+    @products = Product.where(name: params[:searchBar])
+    if(@products == nil)
+      @products = nil
+      logger.info "Estoy vacio"
+      redirect_to '/products/catalogo'
+    else
+      logger.info "Estoy lleno"
+      redirect_to '/products/catalogo'
+    end 
+  end
+  
   # GET /products/1/edit
   def edit
   end
@@ -60,7 +81,7 @@ class ProductsController < ApplicationController
       format.json { head :no_content }
     end
   end
-
+  
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_product
