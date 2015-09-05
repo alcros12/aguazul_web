@@ -46,27 +46,12 @@
 					</a>
 					<ul class="dropdown-menu">
 						<li>
-							<% if session[:email] == nil %>
-							<div class="dropdown-content">
-								<br>
-								<form id='frmLogin' action='/login' role="form" method='post'>
-									<input required id='txtEmail' name="email" type="text" class="form-control" placeholder="Usuario"><br>
-									<div id='smsAlert'></div>
-									<input required id='txtPassword' name="password" type="password" class="form-control" placeholder="Clave"><br>
-									<div id='smsAlert'></div>
-									<div align= "left">
-										<button id='btnLogin' type="submit" class="btn btn-primary">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ingresar&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
-										<br></br>
-										&nbsp;&nbsp;&nbsp;¿Aún no estás registrado?
-										<button id='btnSignIn' type="submit" class="btn btn-danger">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Reg&iacutestrarse&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
-									</div>
-								</form> 
-								<br>
-							</div>
-							<% else %>
-								<span><%=session[:name]%></span></span>
-								<a href='/logout'><strong>Salir</strong></a>
-							<% end %>
+							<%if current_user %>
+						        <p> <%= "Hola #{current_user.email}" %> </p>
+						  		<p> <%= link_to 'Salir', destroy_user_session_path, method: :delete  %> </p>
+						    <% else %>
+								<%= link_to 'Ingresar', new_user_session_path %>
+						    <% end %>
 						</li>
 					</ul>
 				</li>

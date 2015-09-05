@@ -64,3 +64,5 @@ gem 'twitter-bootstrap-rails'
 
 #Attachment Support
 gem 'paperclip', '~> 4.2'
+
+gem 'devise'
