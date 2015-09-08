@@ -1,6 +1,6 @@
 class TradeMarksController < ApplicationController
   before_action :set_trade_mark, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
   # GET /trade_marks
   # GET /trade_marks.json
   def index
