@@ -1,24 +1,20 @@
+<font color="white">
+
 
 <%= simple_form_for @product, :html => { class: 'form-inline', multipart: true } do |f| %>
 
 <div>
-  <font color="white"><%= f.input :name %></font>
+  <%= f.input :name %>
   <%= error_span(@product[:name]) %>
   
   </div>
   <br>
-<<<<<<< HEAD
 <div>
   <%= f.input :price %>
-=======
-  <div>
-  <font color="white"><%= f.input :price %></font>
->>>>>>> 801556e9cca07adabdd5028d8cc274ef05c35df7
   <%= error_span(@product[:price]) %>
     
 </div>
   <br>
-<<<<<<< HEAD
 <div>
   <%= f.input :description %>
   <%= error_span(@product[:description]) %>
@@ -26,55 +22,28 @@
   <br>
 <div>
   <%= f.association :trade_mark %>
-=======
-  <div>
-  <font color="white"><%= f.input :description %></font>
-  <%= error_span(@product[:description]) %>
-</div>
-  <br>
-  <div>
-  <font color="white"><%= f.association :trade_mark %></font>
->>>>>>> 801556e9cca07adabdd5028d8cc274ef05c35df7
   <%= error_span(@product[:trade_mark]) %>
 </div>
   <br>
-<<<<<<< HEAD
 <div>
   <%= f.association :supplier %>
-=======
-  <div>
-  <font color="white"><%= f.association :supplier %></font>
->>>>>>> 801556e9cca07adabdd5028d8cc274ef05c35df7
   <%= error_span(@product[:supplier]) %>
 </div>
   <br>
-<<<<<<< HEAD
 <div>
   <%= f.association :category %>
-=======
-  <div>
-  <font color="white"><%= f.association :category %></font>
->>>>>>> 801556e9cca07adabdd5028d8cc274ef05c35df7
   <%= error_span(@product[:category]) %>
 </div>
   <br>
-<<<<<<< HEAD
 <div>
   <%= f.input :picture, as: :file %>
   <%= image_tag @product.picture.url(:medium) unless @product.picture_file_name.nil? %>
   <%= error_span(@product[:picture]) %>
 </div>
 <br>
-=======
-  <div>
-  <font color="white"><%= f.input :picture, as: :file %></font>
-  <%= image_tag @product.picture.url(:medium) unless @product.picture_file_name.nil? %>
-  <font color="white"><%= error_span(@product[:picture]) %></font>
-
->>>>>>> 801556e9cca07adabdd5028d8cc274ef05c35df7
 </font>
-<div>
-  <%= f.submit %></div>
+
+  <%= f.submit %>
   <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
                 products_path, :class => 'btn btn-default' %>
 <% end %>
