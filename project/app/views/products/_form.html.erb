@@ -1,18 +1,41 @@
+<font color="white">
+
+
 <%= simple_form_for @product, :html => { class: 'form-inline', multipart: true } do |f| %>
 
-
+<div>
   <%= f.input :name %>
   <%= error_span(@product[:name]) %>
+  
+  </div>
+  <br>
+  <div>
   <%= f.input :price %>
   <%= error_span(@product[:price]) %>
+    
+  </div>
+  <br>
+  <div>
   <%= f.input :description %>
   <%= error_span(@product[:description]) %>
+</div>
+  <br>
+  <div>
   <%= f.association :trade_mark %>
   <%= error_span(@product[:trade_mark]) %>
+   </div>
+  <br>
+  <div>
   <%= f.association :supplier %>
   <%= error_span(@product[:supplier]) %>
+    </div>
+  <br>
+  <div>
   <%= f.association :category %>
   <%= error_span(@product[:category]) %>
+   </div>
+  <br>
+  <div>
   <%= f.input :picture, as: :file %>
   <%= image_tag @product.picture.url(:medium) unless @product.picture_file_name.nil? %>
   <%= error_span(@product[:picture]) %>
@@ -23,3 +46,5 @@
   <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
                 products_path, :class => 'btn btn-default' %>
 <% end %>
+
+</font>
