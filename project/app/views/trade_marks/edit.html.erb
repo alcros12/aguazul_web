@@ -1,6 +1,12 @@
-<h1>Editing Trade Mark</h1>
+<font color="white"><h1>Editing Trade Mark</h1></font>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @trade_mark %> |
-<%= link_to 'Back', trade_marks_path %>
+<%= link_to 'Show',
+            @trade_mark,
+            :class => 'btn btn-primary' %>
+            
+<%= link_to 'Back',
+            trade_marks_path,
+            :class => 'btn btn-primary' %>
+<br>&nbsp;
