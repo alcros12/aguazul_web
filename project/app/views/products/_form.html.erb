@@ -40,11 +40,10 @@
   <%= image_tag @product.picture.url(:medium) unless @product.picture_file_name.nil? %>
   <%= error_span(@product[:picture]) %>
 
+</font>
 
-
-  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= f.submit %>
   <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
                 products_path, :class => 'btn btn-default' %>
 <% end %>
 
-</font>

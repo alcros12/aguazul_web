@@ -19,6 +19,11 @@ class Product < ActiveRecord::Base
   where("name LIKE ?", "%#{search}%")
   end
   
+  def self.named_like(search_name)
+    where("name LIKE ?", "%#{search_name}%")
+  end
+    
+  
 end
 
 

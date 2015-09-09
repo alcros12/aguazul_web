@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!
+  #before_action :authenticate_user!
 
   # GET /products
   # GET /products.json
@@ -20,7 +20,7 @@ class ProductsController < ApplicationController
   
    # GET /products/catalog
   def catalog
-    @categories = Category.all
+    #@categories = Category.all
     @products = Product.all
     if params[:search]
       @products = Product.search(params[:search])

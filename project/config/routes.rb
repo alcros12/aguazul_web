@@ -2,14 +2,9 @@ Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users
   get '/index', to: 'home#index'
-  get 'catalog', to: 'products#catalog'
+  get '/catalog', controller: :products, action: :catalog, alias: 'catalog'
   
-  resources :products do
-    collection do
-     get 'catalog'
-     post 'search'
-   end
-  end
+  resources :products 
   resources :trade_marks
   resources :suppliers
   resources :categories
