@@ -1,10 +1,10 @@
 <%- model_class = Product -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => [:'helpers.titles.new', 'New %{model}'], :model => model_class.model_name.human.titleize %></h1>
+  <font color="white"><h1><%=t '.title', :default => [:'helpers.titles.new', 'New %{model}'], :model => model_class.model_name.human.titleize %></h1></font>
 </div>
 <%= render :partial => 'form' %>
 
 <%= link_to 'Back',
-            trade_marks_path,
+            products_path,
             :class => 'btn btn-primary' %>
 <br>&nbsp;
