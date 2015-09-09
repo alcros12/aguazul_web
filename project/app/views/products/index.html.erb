@@ -19,7 +19,7 @@
   <tbody>
     <% @products.each do |product| %>
       <tr>
-        <td><%= product.name %></font></td>
+        <td><font color="white"><%= product.name %></font></td>
         <td><font color="white"><%= product.description %></font></td>
         <td><font color="white"><%= product.category.name %></font></td>
         <td><font color="white"><%= image_tag product.picture.url(:thumb)  %></font></td>

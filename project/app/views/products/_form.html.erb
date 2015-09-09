@@ -9,41 +9,41 @@
   
   </div>
   <br>
-  <div>
+<div>
   <%= f.input :price %>
   <%= error_span(@product[:price]) %>
     
-  </div>
+</div>
   <br>
-  <div>
+<div>
   <%= f.input :description %>
   <%= error_span(@product[:description]) %>
 </div>
   <br>
-  <div>
+<div>
   <%= f.association :trade_mark %>
   <%= error_span(@product[:trade_mark]) %>
-   </div>
+</div>
   <br>
-  <div>
+<div>
   <%= f.association :supplier %>
   <%= error_span(@product[:supplier]) %>
-    </div>
+</div>
   <br>
-  <div>
+<div>
   <%= f.association :category %>
   <%= error_span(@product[:category]) %>
-   </div>
+</div>
   <br>
-  <div>
+<div>
   <%= f.input :picture, as: :file %>
   <%= image_tag @product.picture.url(:medium) unless @product.picture_file_name.nil? %>
   <%= error_span(@product[:picture]) %>
-
+</div>
+<br>
 </font>
 
   <%= f.submit %>
   <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
                 products_path, :class => 'btn btn-default' %>
 <% end %>
-
