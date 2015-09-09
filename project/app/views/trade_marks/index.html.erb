@@ -27,12 +27,7 @@
 
   </table>
 </div>
-
-
-
-
-
-
-<br>
-
-<%= link_to 'New Trade mark', new_trade_mark_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_trade_mark_path,
+            :class => 'btn btn-primary' %>
+<br>&nbsp;

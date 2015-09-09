@@ -1,9 +1,15 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
-  <%= @trade_mark.name %>
+  <font color="white"><strong>Name:</strong>
+  <%= @trade_mark.name %></font>
 </p>
 
-<%= link_to 'Edit', edit_trade_mark_path(@trade_mark) %> |
-<%= link_to 'Back', trade_marks_path %>
+<%= link_to 'Edit',
+            edit_trade_mark_path(@trade_mark),
+            :class => 'btn btn-primary' %>
+            
+<%= link_to 'Back',
+            trade_marks_path,
+            :class => 'btn btn-primary' %>
+<br>&nbsp;

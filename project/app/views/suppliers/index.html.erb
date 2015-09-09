@@ -34,9 +34,8 @@
 
   </table>
 </div>
-
-
-
 <br>
-
-<%= link_to 'New Supplier', new_supplier_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_supplier_path,
+            :class => 'btn btn-primary' %>
+<br>&nbsp;

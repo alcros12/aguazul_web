@@ -1,7 +1,7 @@
 <%- model_class = Product -%>
 
 <div class="container">
-<h1 align="center"><font color="white">Listado de categorias de articulos</font></h1>
+<h1 align="center"><font color="white">Listado de productos</font></h1>
        
   <table class="table">
   <thead>
@@ -19,7 +19,7 @@
   <tbody>
     <% @products.each do |product| %>
       <tr>
-        <td><font color="white"><%= product.name %></font></td>
+        <td><%= product.name %></font></td>
         <td><font color="white"><%= product.description %></font></td>
         <td><font color="white"><%= product.category.name %></font></td>
         <td><font color="white"><%= image_tag product.picture.url(:thumb)  %></font></td>
@@ -38,7 +38,8 @@
   </tbody>
 </table>
 </div>
-
+<br>
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_product_path,
             :class => 'btn btn-primary' %>
+<br>&nbsp;

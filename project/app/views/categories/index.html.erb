@@ -27,10 +27,8 @@
 
   </table>
 </div>
-
-
-<center>
-<p><font color="white" size="4"><%= link_to 'Nueva categoria', new_category_path %></font></p>
-</center>
-
 <br>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_category_path,
+            :class => 'btn btn-primary' %>
+<br>&nbsp;
