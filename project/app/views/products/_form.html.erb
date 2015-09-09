@@ -1,48 +1,46 @@
-<font color="white">
-
 
 <%= simple_form_for @product, :html => { class: 'form-inline', multipart: true } do |f| %>
 
 <div>
-  <%= f.input :name %>
+  <font color="white"><%= f.input :name %></font>
   <%= error_span(@product[:name]) %>
   
   </div>
   <br>
   <div>
-  <%= f.input :price %>
+  <font color="white"><%= f.input :price %></font>
   <%= error_span(@product[:price]) %>
     
   </div>
   <br>
   <div>
-  <%= f.input :description %>
+  <font color="white"><%= f.input :description %></font>
   <%= error_span(@product[:description]) %>
 </div>
   <br>
   <div>
-  <%= f.association :trade_mark %>
+  <font color="white"><%= f.association :trade_mark %></font>
   <%= error_span(@product[:trade_mark]) %>
    </div>
   <br>
   <div>
-  <%= f.association :supplier %>
+  <font color="white"><%= f.association :supplier %></font>
   <%= error_span(@product[:supplier]) %>
     </div>
   <br>
   <div>
-  <%= f.association :category %>
+  <font color="white"><%= f.association :category %></font>
   <%= error_span(@product[:category]) %>
    </div>
   <br>
   <div>
-  <%= f.input :picture, as: :file %>
+  <font color="white"><%= f.input :picture, as: :file %></font>
   <%= image_tag @product.picture.url(:medium) unless @product.picture_file_name.nil? %>
-  <%= error_span(@product[:picture]) %>
+  <font color="white"><%= error_span(@product[:picture]) %></font>
 
 </font>
-
-  <%= f.submit %>
+<div>
+  <%= f.submit %></div>
   <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
                 products_path, :class => 'btn btn-default' %>
 <% end %>
