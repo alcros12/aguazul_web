@@ -22,46 +22,12 @@
   
 <div class="row">
     <% if @products.count == 0 %>
-      <h1 align="center"><font color="white">No se encontraron productos</font></h1>
+      <h1 align="center"><font color="white">No existen productos disponibles</font></h1>
       <br>
     <% else %>
-    <% @products.each do |product| %>
-    
-    <% if @productfiler == nil%>
-        <div class="product-list-inline-large">
-        <div class="col-xs-6 col-md-3">
-          <div class="thumbnail light">
-            <a>
-              <span class="label label-default price price-over"><%= image_tag("gema.png")%>&nbsp;<%=product.price%></span>
-              <%= image_tag product.picture.url(:medium)  %>
-            </a>
-            <div class="caption">
-              <h3><%= product.name %></h3>
-              <p><strong>Categoría: <%= product.category.name.upcase  %></strong></p>
-              <p><%= product.description %></p>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-    <% else %>
-      <div class="product-list-inline-large">
-        <div class="col-xs-6 col-md-3">
-          <div class="thumbnail light">
-            <a>
-              <span class="label label-default price price-over"><%= image_tag("gema.png")%>&nbsp;<%=@productfiler.price%></span>
-              <%= image_tag @productfiler.picture.url(:medium)  %>
-            </a>
-            <div class="caption">
-              <h3><%= @productfiler.name %></h3>
-              <p><strong>Categoría: <%= @productfiler.category.name.upcase  %></strong></p>
-              <p><%= @productfiler.description %></p>
-            </div>
-          </div>
-        </div>
-      </div>
-    <% end %>
-    <% end %>
+      <% @products.each do |product| %>
+          <%= render "product_row", product: product, order_article: @order_article %>  
+      <% end %>
     <% end %>
   </div>
 </div>

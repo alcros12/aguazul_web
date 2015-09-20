@@ -1,0 +1,26 @@
+<!---------------------------------------------------------------->
+<div class="product-list-inline-large">
+  <div class="col-xs-12 col-sm-6 col-md-4">
+    <div class="thumbnail light">
+          <a>
+              <span class="label label-default price price-over"><%= image_tag("gema.png")%>&nbsp;<%=product.price%></span>
+                <%= image_tag product.picture.url(:medium)  %>
+          </a>
+          <div class="caption">
+              <h3><%= product.name %></h3>
+              <p><%= product.description %></p>
+              <h4>Sub Total: <%= order_article.total_price %>&nbsp;<%= image_tag("gema.png")%></h4>
+          </div>
+      <%= form_for order_article, remote: true do |f| %>
+        <div class="input-group">
+          <%= f.number_field :quantity, value: order_article.quantity.to_i, class: "form-control", min: 1 %>
+          <%= f.hidden_field :product_id, value: product.id %>
+          <div class="input-group-btn">
+            <%= f.submit "Actualizar Cantidad", class: "btn btn-primary" %>
+            <%= link_to "Borrar", order_article, { data: { confirm: "¿Estas seguro de borrar '#{order_article.product.name}' del carrito?" }, method: :delete, remote: true, class: "btn btn-danger" } %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+<% if !@order_article.nil? && @order_article.errors.any? %>
+  <div class="alert alert-danger">
+    <ul>
+    <% @order_article.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+<% if @order_articles.size == 0 %>
+  <p class="text-center">
+    El carrito esta vacio. Por favor <%= link_to "regresa al catalogo", catalog_path %> y agrega algunos productos al carrito.
+  </p>
+<% else %>
+  <% @order_articles.each do |order_article| %>
+    <%= render 'carts/cart_row', product: order_article.product, order_article: order_article, show_total: true %>
+  <% end %>
+<% end %>

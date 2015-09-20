@@ -6,7 +6,6 @@
 <div>
   <%= f.input :name %>
   <%= error_span(@product[:name]) %>
-  
   </div>
   <br>
 <div>
@@ -41,6 +40,10 @@
   <%= error_span(@product[:picture]) %>
 </div>
 <br>
+<div>
+  <%= f.input :stock %>
+  <%= error_span(@product[:stock]) %>
+</div>
 </font>
 
   <%= f.submit %>

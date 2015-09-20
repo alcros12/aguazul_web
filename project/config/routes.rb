@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
+
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  devise_for :users
+  devise_for :users 
   get '/index', to: 'home#index'
   get '/contactus', to: 'home#contact'
   get '/catalog', controller: :products, action: :catalog, alias: 'catalog'
@@ -10,8 +12,12 @@ Rails.application.routes.draw do
   resources :suppliers
   resources :categories
   resources :tipos
-
+  resource :cart, only: [:show]
+  resources :order_articles, only: [:create, :update, :destroy]
+  
  root 'home#index'
+
+  
 
 
 

@@ -22,21 +22,10 @@ class ProductsController < ApplicationController
   def catalog
     #@categories = Category.all
     @products = Product.all
+    @order_article = current_order.order_articles.new
     if params[:search]
-      @products = Product.search(params[:search])
+      @products = Product.named_like(params[:search])
     end
-  end
-  
-  def search
-    @products = Product.where(name: params[:searchBar])
-    if(@products == nil)
-      @products = nil
-      logger.info "Estoy vacio"
-      redirect_to '/products/catalogo'
-    else
-      logger.info "Estoy lleno"
-      redirect_to '/products/catalogo'
-    end 
   end
   
   # GET /products/1/edit
@@ -91,6 +80,6 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:name, :description, :price, :category_id, :trade_mark_id, :supplier_id, :picture)
+      params.require(:product).permit(:name, :description, :price, :category_id, :trade_mark_id, :supplier_id, :picture, :stock)
     end
 end

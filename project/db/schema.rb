@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150905210812) do
+ActiveRecord::Schema.define(version: 20150919032815) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name",                 limit: 255
@@ -19,6 +19,49 @@ ActiveRecord::Schema.define(version: 20150905210812) do
     t.datetime "created_at",                         null: false
     t.datetime "updated_at",                         null: false
   end
+
+  create_table "order_articles", force: :cascade do |t|
+    t.integer  "product_id",  limit: 4
+    t.integer  "order_id",    limit: 4
+    t.integer  "unit_price",  limit: 4
+    t.integer  "quantity",    limit: 4
+    t.integer  "total_price", limit: 4
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+  end
+
+  add_index "order_articles", ["order_id"], name: "index_order_articles_on_order_id", using: :btree
+  add_index "order_articles", ["product_id"], name: "index_order_articles_on_product_id", using: :btree
+
+  create_table "order_items", force: :cascade do |t|
+    t.integer  "product_id",  limit: 4
+    t.integer  "order_id",    limit: 4
+    t.integer  "unit_price",  limit: 4
+    t.integer  "quantity",    limit: 4
+    t.integer  "total_price", limit: 4
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+  end
+
+  add_index "order_items", ["order_id"], name: "index_order_items_on_order_id", using: :btree
+  add_index "order_items", ["product_id"], name: "index_order_items_on_product_id", using: :btree
+
+  create_table "order_statuses", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.integer  "subtotal",        limit: 4
+    t.integer  "shipping",        limit: 4
+    t.integer  "total",           limit: 4
+    t.integer  "order_status_id", limit: 4
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
+
+  add_index "orders", ["order_status_id"], name: "index_orders_on_order_status_id", using: :btree
 
   create_table "products", force: :cascade do |t|
     t.string   "name",                 limit: 255
@@ -33,6 +76,7 @@ ActiveRecord::Schema.define(version: 20150905210812) do
     t.string   "picture_content_type", limit: 255
     t.integer  "picture_file_size",    limit: 4
     t.datetime "picture_updated_at"
+    t.integer  "stock",                limit: 4
   end
 
   add_index "products", ["category_id"], name: "index_products_on_category_id", using: :btree
@@ -79,6 +123,10 @@ ActiveRecord::Schema.define(version: 20150905210812) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "order_articles", "orders"
+  add_foreign_key "order_articles", "products"
+  add_foreign_key "order_items", "products"
+  add_foreign_key "orders", "order_statuses"
   add_foreign_key "products", "categories"
   add_foreign_key "products", "suppliers"
   add_foreign_key "products", "trade_marks"

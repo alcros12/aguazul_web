@@ -6641,4 +6641,18 @@ button.close {
     }
 }
 
-/*# sourceMappingURL=bootstrap.css.map */
+.sticky {
+    position: fixed;
+    /*left: 0;
+    top: 0;
+    z-index: 100;
+    border-top: 0;
+    background: white;
+    border:5;
+    width: 105%;*/
+    background: white;
+    width: 1140px;
+    top: 0;
+    margin-left: -570px;
+    z-index: 100;
+}

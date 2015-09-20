@@ -1,0 +1,16 @@
+<div class="btn-group">
+  <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <span class="glyphicon glyphicon-shopping-cart"></span>&nbsp;Carrito<%=" (#{current_order.order_articles.size}) "%><span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu">
+    <li><a><strong>Saldo Actual: </strong><%= image_tag("gemacart.png")%></a></li>
+    <li role="separator" class="divider"></li>
+    <li><a><%="Productos: #{current_order.order_articles.size} "%></a></li>
+    <li><a><%="Total: #{ current_order.subtotal} "%><%= image_tag("gemacart.png")%></a></li>
+    <li><a href=<%= cart_path %> ><span class="glyphicon glyphicon-eye-open"></span>&nbsp;Ver Detalle</a></li>
+    <li role="separator" class="divider"></li>
+    <li><a href="#"><span class="glyphicon glyphicon-ok-sign"></span>&nbsp;Realizar Compra</a></li>
+  </ul>
+</div>
+
+<!--< %= link_to "#{current_order.order_articles.size} Productos ( #{ current_order.subtotal} )", cart_path, class: "btn btn-link" %>-->
