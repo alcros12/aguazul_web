@@ -10,6 +10,71 @@
 </head>
 <body>
 	<div class="container">
+		<nav class="" role="navigation">
+			<ul class="">
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+					
+					<% if current_user %>
+						  	<div class="btn-group">
+						  		 <button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-user"></span>&nbsp;<%= "#{current_user.email}" %></button>
+						  			<ul class="dropdown-menu">
+								    <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span>&nbsp;Mi carrito</a></li>
+								    <li><a href="#">Direcciones</a></li>
+								    <li><a href="#">Opciones</a></li>
+								    <li role="separator" class="divider"></li>
+								    <li><a><%= link_to 'Salir', destroy_user_session_path, method: :delete  %></a></li>
+								  </ul>
+						  </div>
+						  
+						  		<br>
+					 <% else %>
+					  	 <div class="btn-group">
+						  		 <button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-user"></span>&nbsp;<%= 'Inicia sesion o Registrate' %></button>
+						  			<ul class="dropdown-menu">
+						  				
+								    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+									    <a id="item"><%= f.input :email, required: true, autofocus: true %></a>
+									   
+									    <a id="itemg"><%= f.input :password, required: true %></a>
+									    
+									    <a id="itemgg">&nbsp;&nbsp;&nbsp;&nbsp;<%= f.button :submit, "Entrar" %></a>
+									    <a id="itemggg" onclick="muestra_oculta('contenido_a_mostrar')" class="btn btn-info" role="button">Registrarme</a>
+									   
+									<% end %>
+									
+									<div id="contenido_a_mostrar">
+									    	<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  											<%= f.error_notification %>
+									   
+									     	<a><%= f.input :email, required: true, autofocus: true %></a>
+    										<a><%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %></a>
+									    	<a><%= f.input :password_confirmation, required: true %></a>
+									    	
+									    	&nbsp;&nbsp;&nbsp;&nbsp;<%= f.submit "Registrarme",:class=>'btn btn-default' %>
+									    	
+									    	<% end %>
+								    </div>
+								    
+									    	
+									    
+								  </ul>
+						  </div>
+						<% end %>
+					
+					</a>
+			 
+				</li>
+
+			</ul>
+		</nav>
+		
+		
+		
+		
+		
+		
+		
 		<br/>
 		<%if current_user %>
 			<%= render 'layouts/menu_usuario' %>
@@ -37,5 +102,39 @@
 			</div>
 		</div>
 	</div>
-<footer>
+</footer>
+
+
+
+
+<script language="JavaScript">
+
+function muestra_oculta(id){
+	if (document.getElementById){
+	var el = document.getElementById(id);
+	el.style.display = (el.style.display == 'none') ? 'block' : 'none'; 
+		$("#item").show();
+		$("#itemg").show();
+		$("#itemgg").show();
+		$("#itemggg").show();
+	}
+		$("#item").hide();
+		$("#itemg").hide();
+		$("#itemgg").hide();
+		$("#itemggg").hide();
+	}
+	window.onload = function(){
+	muestra_oculta('contenido_a_mostrar');
+	$("#item").show();
+	$("#itemg").show();
+	$("#itemgg").show();
+	$("#itemggg").show();
+	}
+
+</script>
+
+
+
+
+	
 </html>
